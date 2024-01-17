@@ -23,7 +23,8 @@ const Search = () => {
   const handleSearch = async () => {
     const q = query(
       collection(db, "users"),
-      where("displayName", "==", username)
+      where("displayName", ">=", username.toLowerCase()),
+      where("displayName", "<=", username.toLowerCase() + "\uf8ff")
     );
 
     try {
