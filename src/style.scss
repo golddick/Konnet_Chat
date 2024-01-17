@@ -15,7 +15,7 @@
 }
 
 .formContainer {
-  background-color: #a7bcff;
+  background-color: #478778;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -31,14 +31,14 @@
     align-items: center;
 
     .logo {
-      color: #5d5b8d;
+      color: #478778;
       font-weight: bold;
       font-size: 24px;
 
     }
 
     .title {
-      color: #5d5b8d;
+      color: #478778;
       font-size: 12px;
     }
 
@@ -50,15 +50,16 @@
       input {
         padding: 15px;
         border: none;
+        outline: none;
         width: 250px;
-        border-bottom: 1px solid #a7bcff;
+        border-bottom: 1px solid #478778;
         &::placeholder {
           color: rgb(175, 175, 175);
         }
       }
 
       button {
-        background-color: #7b96ec;
+        background-color: #478778;
         color: white;
         padding: 10px;
         font-weight: bold;
@@ -70,7 +71,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        color: #8da4f1;
+        color: #478778;
         font-size: 12px;
         cursor: pointer;
 
@@ -80,7 +81,7 @@
       }
     }
     p {
-      color: #5d5b8d;
+      color: #478778;
       font-size: 12px;
       margin-top: 10px;
     }
@@ -88,7 +89,7 @@
 }
 
 .home {
-  background-color: #a7bcff;
+  background-color: #478778;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -107,13 +108,18 @@
 
     .sidebar {
       flex: 1;
-      background-color: #3e3c61;
+      background-color: #0c1b18e1;
       position: relative;
+
+      @include mobile{
+        width: 20%;
+        // background-color: red;
+      }
 
       .navbar {
         display: flex;
         align-items: center;
-        background-color: #2f2d52;
+        background-color: #0c1b18e1;
         height: 50px;
         padding: 10px;
         justify-content: space-between;
@@ -129,6 +135,8 @@
         .user {
           display: flex;
           gap: 10px;
+          color: whitesmoke;
+          text-transform: uppercase;
 
           img {
             background-color: #ddddf7;
@@ -136,10 +144,15 @@
             width: 24px;
             border-radius: 50%;
             object-fit: cover;
+
+            @include mobile{
+              display: none;
+            }
           }
 
           button {
-            background-color: #5d5b8d;
+            background-color: #478778;
+            border-radius: 5px;
             color: #ddddf7;
             font-size: 10px;
             border: none;
@@ -170,16 +183,37 @@
         }
       }
 
+      .chats{
+       
+        @include mobile{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 10px;
+        }
+      }
+
       .userChat {
         padding: 10px;
         display: flex;
         align-items: center;
         gap: 10px;
         color: white;
+        position: relative;
+        // background-color: aqua;
+       
         cursor: pointer;
 
         &:hover {
-          background-color: #2f2d52;
+          background-color: #478778;
+        }
+
+        @include mobile{
+          // border-bottom: 2px solid white;
+          
+          border-radius: 20px;
+          border: 1px solid whitesmoke;
+          margin-bottom: 5px;
         }
 
         img {
@@ -187,16 +221,33 @@
           height: 50px;
           border-radius: 50%;
           object-fit: cover;
+          @include mobile{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 10px;
+            // display: none;
+          }
         }
 
         .userChatInfo {
           span {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 500;
+            text-transform: uppercase;
+            @include mobile{
+             font-size: 12px;
+             
+            }
           }
           p {
             font-size: 14px;
             color: lightgray;
+            text-transform: uppercase;
+            @include mobile{
+              font-size: 12px;
+              display: none;
+             }
           }
         }
       }
@@ -206,7 +257,7 @@
 
       .chatInfo {
         height: 50px;
-        background-color: #5d5b8d;
+        background-color: #0c1b18e1;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -225,7 +276,7 @@
       }
 
       .messages {
-        background-color: #ddddf7;
+        background-color: #9cafabe1;
         padding: 10px;
         height: calc(100% - 160px);
         overflow: scroll;
@@ -272,7 +323,7 @@
             .messageContent {
               align-items: flex-end;
               p {
-                background-color: #8da4f1;
+                background-color: #062720e1;
                 color: white;
                 border-radius: 10px 0px 10px 10px;
               }
@@ -315,7 +366,7 @@
             border: none;
             padding: 10px 15px;
             color: white;
-            background-color: #8da4f1;
+            background-color: #478778;
             cursor: pointer;
           }
         }
